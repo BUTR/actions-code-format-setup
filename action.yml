@@ -18,6 +18,7 @@ runs:
   
     - name: Install dotnet-format
       run: dotnet tool install -g dotnet-format
+      shell: pwsh
 
     - name: Run dotnet format
       id: format
@@ -31,9 +32,9 @@ runs:
     - name: Commit files
       run: >-
         if ('${{ steps.format.outputs.has-changes == 'true' }}' -eq '') { Return };
-        git config --local user.name "github-actions[bot]"
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git commit -a -m 'Automated dotnet-format update'
+        git config --local user.name "github-actions[bot]";
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com";
+        git commit -a -m 'Automated dotnet-format update';
       shell: pwsh
       
     - name: Create Pull Request
@@ -52,11 +53,12 @@ runs:
     # Pushing won't work to forked repos
     # - name: Commit files
     #   if: steps.format.outputs.has-changes == 'true'
-    #   run: |
-    #     git config --local user.name "github-actions[bot]"
-    #     git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-    #     git commit -a -m 'Automated dotnet-format update
+    #   run: >-
+    #     git config --local user.name "github-actions[bot]";
+    #     git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com";
+    #     git commit -a -m 'Automated dotnet-format update;
     #     Co-authored-by: ${{ github.event.pull_request.user.login }} <${{ github.event.pull_request.user.id }}+${{ github.event.pull_request.user.login }}@users.noreply.github.com>'
+    #  shell: pwsh
 
     # - name: Push changes
     #   if: steps.format.outputs.has-changes == 'true'
