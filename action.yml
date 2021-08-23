@@ -49,6 +49,7 @@ runs:
         assignees: aragas, artifixer, zijistark
         reviewers: aragas, artifixer, zijistark
         branch: code-formatting/fix-codeformatting
+        delete-branch: true
 
     # Pushing won't work to forked repos
     # - name: Commit files
