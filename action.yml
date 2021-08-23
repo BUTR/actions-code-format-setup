@@ -34,7 +34,7 @@ runs:
         if ('${{ steps.format.outputs.has-changes == 'true' }}' -eq '') { Return };
         git config --local user.name "github-actions[bot]";
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com";
-        git commit -a -m 'Automated dotnet-format update';
+        git diff-index --quiet HEAD || git commit -a -m 'Automated dotnet-format update';
       shell: pwsh
       
     - name: Create Pull Request
