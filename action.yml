@@ -7,6 +7,12 @@ inputs:
   github-token:
     description: ''
     default: ''
+  assignees:
+    description: ''
+    default: 'aragas, artifixer, zijistark'
+  reviewers:
+    description: ''
+    default: 'aragas, artifixer, zijistark'
 
 runs:
   using: "composite"
@@ -46,8 +52,8 @@ runs:
         committer: GitHub <noreply@github.com>
         author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
         labels: code-formatting
-        assignees: aragas, artifixer, zijistark
-        reviewers: aragas, artifixer, zijistark
+        assignees: ${{ inputs.assignees }}
+        reviewers: ${{ inputs.reviewers }}
         branch: code-formatting/fix-codeformatting
         delete-branch: true
 
