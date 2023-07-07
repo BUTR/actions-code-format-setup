@@ -28,7 +28,7 @@ runs:
 
     - name: Run dotnet format
       id: format
-      uses: jfversluis/dotnet-format@1.0.9
+      uses: jfversluis/dotnet-format@v1.0.9
       with:
         repo-token: ${{ inputs.github-token }}
         action: "fix"
