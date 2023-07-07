@@ -18,7 +18,7 @@ runs:
   using: "composite"
   steps:
     - name: Setup
-      uses: butr/actions-common-setup@v1.2
+      uses: butr/actions-common-setup@v2
       with:
         github-token: ${{ inputs.github-token }}
   
@@ -28,7 +28,7 @@ runs:
 
     - name: Run dotnet format
       id: format
-      uses: jfversluis/dotnet-format@1.0.7
+      uses: jfversluis/dotnet-format@1.0.9
       with:
         repo-token: ${{ inputs.github-token }}
         action: "fix"
