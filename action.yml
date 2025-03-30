@@ -9,10 +9,10 @@ inputs:
     default: ''
   assignees:
     description: ''
-    default: 'aragas, artifixer, zijistark'
+    default: 'aragas, artifixer'
   reviewers:
     description: ''
-    default: 'aragas, artifixer, zijistark'
+    default: 'aragas, artifixer'
 
 runs:
   using: "composite"
